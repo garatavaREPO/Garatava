@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T20:12:56.7668625Z",
+  "updatedAt": "2026-08-04T20:16:15.1765007Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -280,7 +280,7 @@
           "description": "Közlenmiş Patlıcan, kırmızı biber ve soğan ile harmanlanmış lezzet",
           "calories": null,
           "allergens": [],
-          "image": null
+          "image": "/images/menu/p73.jpg"
         },
         {
           "name": "Peynir Tabağı",
