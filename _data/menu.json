@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T20:21:39.3565691Z",
+  "updatedAt": "2026-08-04T20:23:53.8851921Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -7,16 +7,8 @@
       "sortOrder": 10,
       "products": [
         {
-          "name": "Tavuk Şiş",
-          "price": 380.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
           "name": "Tavuk Izgara",
-          "price": 440.00,
+          "price": 500.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -24,7 +16,7 @@
         },
         {
           "name": "Köfte Izgara",
-          "price": 620.00,
+          "price": 600.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -56,7 +48,7 @@
         },
         {
           "name": "Tavuk Kavurma",
-          "price": 400.00,
+          "price": 480.00,
           "description": "",
           "calories": null,
           "allergens": [],
