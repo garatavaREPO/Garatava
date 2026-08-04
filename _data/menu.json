@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-08-04T20:23:53.8851921Z",
+  "updatedAt": "2026-08-04T20:33:13.7347693Z",
   "businessName": "GARATAVA",
   "categories": [
     {
       "name": "Ana Yemek",
-      "sortOrder": 10,
+      "sortOrder": 1,
       "products": [
         {
           "name": "Tavuk Izgara",
@@ -58,7 +58,7 @@
     },
     {
       "name": "Aperatifler",
-      "sortOrder": 20,
+      "sortOrder": 2,
       "products": [
         {
           "name": "Patates Tabağı",
@@ -72,7 +72,7 @@
     },
     {
       "name": "Sıcak İçecekler",
-      "sortOrder": 60,
+      "sortOrder": 6,
       "products": [
         {
           "name": "Çay",
@@ -94,7 +94,7 @@
     },
     {
       "name": "Soğuk İçecekler",
-      "sortOrder": 70,
+      "sortOrder": 7,
       "products": [
         {
           "name": "Pet Su 1.5L",
@@ -156,7 +156,7 @@
     },
     {
       "name": "Rakılar",
-      "sortOrder": 80,
+      "sortOrder": 8,
       "products": [
         {
           "name": "Beylerbeyi Göbek Rakısı 20cl",
@@ -205,12 +205,20 @@
           "calories": null,
           "allergens": [],
           "image": null
+        },
+        {
+          "name": "Beylerbeyi Göbek Rakısı 35cl",
+          "price": 1700.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
         }
       ]
     },
     {
       "name": "Biralar",
-      "sortOrder": 90,
+      "sortOrder": 9,
       "products": [
         {
           "name": "Efes Pilsen 50cl",
@@ -232,7 +240,7 @@
     },
     {
       "name": "Mezeler",
-      "sortOrder": 100,
+      "sortOrder": 10,
       "products": [
         {
           "name": "Atom",
@@ -310,7 +318,7 @@
     },
     {
       "name": "Salatalar",
-      "sortOrder": 110,
+      "sortOrder": 11,
       "products": [
         {
           "name": "Çoban Salata",
@@ -332,7 +340,7 @@
     },
     {
       "name": "Ara Sıcaklar",
-      "sortOrder": 130,
+      "sortOrder": 13,
       "products": [
         {
           "name": "Paçanga Böreği",
@@ -346,6 +354,20 @@
           "name": "Kaşarlı Mantar",
           "price": 300.00,
           "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        }
+      ]
+    },
+    {
+      "name": "Hizmetler",
+      "sortOrder": 16,
+      "products": [
+        {
+          "name": "Kendin Getir Biz Pişirelim",
+          "price": 500.00,
+          "description": "Etini ve bandrollü içkini getir biz hazırlayalım. (Kişi başı fiyat uygulanır, 10 yaş altı çocuklarımız misafirimizdir.)",
           "calories": null,
           "allergens": [],
           "image": null
