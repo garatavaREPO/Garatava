@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T17:06:38.0731243Z",
+  "updatedAt": "2026-08-04T19:14:14.6165558Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -32,15 +32,31 @@
         },
         {
           "name": "Mangalda Sucuk",
-          "price": 400.00,
+          "price": 600.00,
           "description": "",
           "calories": null,
           "allergens": [],
           "image": null
         },
         {
-          "name": "Deneme Ürün",
-          "price": 1400.00,
+          "name": "Et Kavurma",
+          "price": 650.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Dana Ciğer",
+          "price": 600.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Tavuk Kavurma",
+          "price": 400.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -49,12 +65,12 @@
       ]
     },
     {
-      "name": "Şaraplar",
-      "sortOrder": 30,
+      "name": "Aperatifler",
+      "sortOrder": 20,
       "products": [
         {
-          "name": "Angora Kırmızı 75cl",
-          "price": 780.00,
+          "name": "Patates Tabağı",
+          "price": 250.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -64,7 +80,7 @@
     },
     {
       "name": "Sıcak İçecekler",
-      "sortOrder": 50,
+      "sortOrder": 60,
       "products": [
         {
           "name": "Çay",
@@ -81,40 +97,16 @@
           "calories": null,
           "allergens": [],
           "image": null
-        },
-        {
-          "name": "Bitki Çayı",
-          "price": 90.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Filtre Kahve",
-          "price": 150.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Americano",
-          "price": 150.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
         }
       ]
     },
     {
       "name": "Soğuk İçecekler",
-      "sortOrder": 60,
+      "sortOrder": 70,
       "products": [
         {
-          "name": "Pet Su 500ml",
-          "price": 25.00,
+          "name": "Pet Su 1.5L",
+          "price": 75.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -122,7 +114,7 @@
         },
         {
           "name": "Ayran",
-          "price": 25.00,
+          "price": 80.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -130,7 +122,7 @@
         },
         {
           "name": "Gazlı İçecek",
-          "price": 90.00,
+          "price": 100.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -138,7 +130,7 @@
         },
         {
           "name": "Ice Tea",
-          "price": 90.00,
+          "price": 100.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -146,15 +138,15 @@
         },
         {
           "name": "Şalgam Suyu",
-          "price": 70.00,
+          "price": 150.00,
           "description": "",
           "calories": null,
           "allergens": [],
           "image": null
         },
         {
-          "name": "Sıkma Portakal",
-          "price": 120.00,
+          "name": "Sade Soda",
+          "price": 50.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -164,7 +156,7 @@
     },
     {
       "name": "Rakılar",
-      "sortOrder": 70,
+      "sortOrder": 80,
       "products": [
         {
           "name": "Beylerbeyi Göbek Rakısı 20cl",
@@ -177,14 +169,6 @@
         {
           "name": "Beylerbeyi Göbek Rakısı 70cl",
           "price": 3250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Beylerbeyi Duble",
-          "price": 400.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -205,16 +189,32 @@
           "calories": null,
           "allergens": [],
           "image": null
+        },
+        {
+          "name": "Rakı Tek",
+          "price": 250.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Rakı (Duble)",
+          "price": 350.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
         }
       ]
     },
     {
       "name": "Biralar",
-      "sortOrder": 80,
+      "sortOrder": 90,
       "products": [
         {
           "name": "Efes Pilsen 50cl",
-          "price": 230.00,
+          "price": 200.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -222,7 +222,7 @@
         },
         {
           "name": "Tuborg Gold 50cl",
-          "price": 230.00,
+          "price": 200.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -232,26 +232,10 @@
     },
     {
       "name": "Mezeler",
-      "sortOrder": 90,
+      "sortOrder": 100,
       "products": [
         {
           "name": "Atom",
-          "price": 250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Havuç Tarator",
-          "price": 250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Haydari",
           "price": 250.00,
           "description": "",
           "calories": null,
@@ -275,16 +259,24 @@
           "image": null
         },
         {
-          "name": "Köpeoğlu",
-          "price": 200.00,
+          "name": "Kuru Cacık",
+          "price": 250.00,
           "description": "",
           "calories": null,
           "allergens": [],
           "image": null
         },
         {
-          "name": "Girit Mezesi",
-          "price": 200.00,
+          "name": "Patlıcan Salatası",
+          "price": 250.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Peynir Tabağı",
+          "price": 250.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -294,7 +286,7 @@
     },
     {
       "name": "Salatalar",
-      "sortOrder": 100,
+      "sortOrder": 110,
       "products": [
         {
           "name": "Çoban Salata",
@@ -305,102 +297,8 @@
           "image": null
         },
         {
-          "name": "Peksimetli Köy Salatası",
-          "price": 300.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Çökelekli Garatava Salata",
+          "name": "Garatava Salata",
           "price": 400.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Roka Salatası",
-          "price": 350.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        }
-      ]
-    },
-    {
-      "name": "Kahvaltılar",
-      "sortOrder": 110,
-      "products": [
-        {
-          "name": "Köy Kahvaltısı (1 Kişilik)",
-          "price": 500.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Köy Kahvaltısı (2 Kişilik)",
-          "price": 850.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Garatava Kahvaltı",
-          "price": 1350.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Kaşarlı Omlet",
-          "price": 200.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Mantarlı Omlet",
-          "price": 200.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Beyaz Peynir Maydanozlu Omlet",
-          "price": 200.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Sucuklu Omlet",
-          "price": 250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Haşlanmış Yumurta",
-          "price": 30.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Ezine Peynir Porsiyon",
-          "price": 100.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -410,34 +308,20 @@
     },
     {
       "name": "Ara Sıcaklar",
-      "sortOrder": 120,
-      "products": [
-        {
-          "name": "Paçanga Böreği",
-          "price": 400.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        }
-      ]
-    },
-    {
-      "name": "Mevsimler Ürünler",
       "sortOrder": 130,
       "products": [
         {
-          "name": "Fırında Mantar",
-          "price": 450.00,
+          "name": "Paçanga Böreği",
+          "price": 300.00,
           "description": "",
           "calories": null,
           "allergens": [],
           "image": null
         },
         {
-          "name": "Acı Ot",
-          "price": 350.00,
-          "description": "Bodrumun tarif edilemez yöresel kış mevsimi ürünü",
+          "name": "Kaşarlı Mantar",
+          "price": 300.00,
+          "description": "",
           "calories": null,
           "allergens": [],
           "image": null
