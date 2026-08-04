@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T20:16:15.1765007Z",
+  "updatedAt": "2026-08-04T20:21:39.3565691Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -151,6 +151,14 @@
           "calories": null,
           "allergens": [],
           "image": null
+        },
+        {
+          "name": "Pet Su 500ml",
+          "price": 50.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
         }
       ]
     },
@@ -252,8 +260,8 @@
         },
         {
           "name": "Pava",
-          "price": 200.00,
-          "description": "Ege yöresinin vazgeçilmez lezzeti",
+          "price": 250.00,
+          "description": "Gambille baklasından ege yöresinin vazgeçilmez lezzeti",
           "calories": null,
           "allergens": [],
           "image": null
@@ -261,6 +269,22 @@
         {
           "name": "Yoğurtlu Semizotu",
           "price": 200.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Köpeoğlu",
+          "price": 250.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Girit Mezesi",
+          "price": 250.00,
           "description": "",
           "calories": null,
           "allergens": [],
