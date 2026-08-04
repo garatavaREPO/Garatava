@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-22T19:09:07.9107343Z",
+  "updatedAt": "2026-08-04T17:06:38.0731243Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -9,48 +9,6 @@
         {
           "name": "Tavuk Şiş",
           "price": 380.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Dana Rosto",
-          "price": 650.00,
-          "description": "Dana Eti, Patates Püresi, Şefin özel sosu",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Fajita Et",
-          "price": 620.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Dana Antrikot",
-          "price": 680.00,
-          "description": "Ersen şefin en özel bölgelerinden elde edilmiş et ile muhteşem bir menü",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Et Sote",
-          "price": 620.00,
-          "description": "",
-          "calories": null,
-          "allergens": [
-            "gluten"
-          ],
-          "image": null
-        },
-        {
-          "name": "Dana Ciğer",
-          "price": 550.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -73,64 +31,16 @@
           "image": null
         },
         {
-          "name": "Çoban Kavurma",
-          "price": 650.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Dana Bonfile",
-          "price": 680.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Ezogelin Çorbası",
-          "price": 150.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Ersin Şef'in Speciali",
-          "price": 1000.00,
-          "description": "özel tarifle marine edilmiş ve soslanmış 200 gr bonfile",
-          "calories": 1440,
-          "allergens": [
-            "gluten"
-          ],
-          "image": null
-        },
-        {
           "name": "Mangalda Sucuk",
           "price": 400.00,
           "description": "",
           "calories": null,
           "allergens": [],
           "image": null
-        }
-      ]
-    },
-    {
-      "name": "Başlangıç",
-      "sortOrder": 20,
-      "products": [
-        {
-          "name": "Kellepaça Çorbası",
-          "price": 140.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
         },
         {
-          "name": "Mercimek Çorbası",
-          "price": 150.00,
+          "name": "Deneme Ürün",
+          "price": 1400.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -145,28 +55,6 @@
         {
           "name": "Angora Kırmızı 75cl",
           "price": 780.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        }
-      ]
-    },
-    {
-      "name": "Tatlılar",
-      "sortOrder": 40,
-      "products": [
-        {
-          "name": "Dondurmalı İrmik",
-          "price": 230.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Künefe",
-          "price": 210.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -311,14 +199,6 @@
           "image": null
         },
         {
-          "name": "Efe Gold Single",
-          "price": 350.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
           "name": "Efe Gold 50cl",
           "price": 2200.00,
           "description": "",
@@ -409,14 +289,6 @@
           "calories": null,
           "allergens": [],
           "image": null
-        },
-        {
-          "name": "Haydari",
-          "price": 200.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
         }
       ]
     },
@@ -428,11 +300,8 @@
           "name": "Çoban Salata",
           "price": 300.00,
           "description": "Mevsim ürünleriyle birlikte bodruma has Peynir ve Yeşil Zeytin",
-          "calories": 296,
-          "allergens": [
-            "gluten",
-            "milk"
-          ],
+          "calories": null,
+          "allergens": [],
           "image": null
         },
         {
@@ -448,9 +317,7 @@
           "price": 400.00,
           "description": "",
           "calories": null,
-          "allergens": [
-            "gluten"
-          ],
+          "allergens": [],
           "image": null
         },
         {
