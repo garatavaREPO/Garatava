@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T19:14:14.6165558Z",
+  "updatedAt": "2026-08-04T20:12:56.7668625Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -243,6 +243,14 @@
           "image": null
         },
         {
+          "name": "Şakşuka",
+          "price": 250.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
           "name": "Pava",
           "price": 200.00,
           "description": "Ege yöresinin vazgeçilmez lezzeti",
@@ -269,7 +277,7 @@
         {
           "name": "Patlıcan Salatası",
           "price": 250.00,
-          "description": "",
+          "description": "Közlenmiş Patlıcan, kırmızı biber ve soğan ile harmanlanmış lezzet",
           "calories": null,
           "allergens": [],
           "image": null
