@@ -338,6 +338,27 @@
             .gallery-thumb { width: 60px; height: 60px; }
         }
 
+        /* "Neden Garatava?" madde listesi */
+        .reason-item {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+        .reason-item input {
+            flex: 1;
+            min-width: 0;
+            padding: 0.7rem 0.9rem;
+            border: 1px solid var(--line);
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--ink);
+            background: #fff;
+            transition: border-color 0.2s;
+        }
+        .reason-item input:focus { outline: none; border-color: var(--teal); }
+
         .upload-row {
             display: flex;
             gap: 0.5rem;
@@ -425,7 +446,6 @@
                 <div class="form-group">
                     <label for="patInput">GİRİŞ ŞİFRESİ</label>
                     <input type="password" id="patInput" placeholder="lütfen şifrenizi giriniz..." autocomplete="off" required>
-                    <span class="hint">Şifre almak için geliştiriciniz ile konuşunuz.</span>
                 </div>
                 <button type="submit" class="btn btn-amber btn-block">
                     <i class="fa-solid fa-right-to-bracket"></i> Giriş Yap
@@ -487,19 +507,16 @@
                 <div class="card-h"><i class="fa-regular fa-clock"></i> Servis Saatleri</div>
                 <div class="form-group">
                     <label>Açılış Saatleri</label>
-                    <input type="text" data-field="hours" placeholder="Her gün 09:00 - 02:00">
-                    <span class="hint">Üst bilgi çubuğunda ve İletişim bölümünde görünür.</span>
+                    <input type="text" data-field="hours" placeholder="Her gün 16:00 - 00:00">
                 </div>
                 <div class="grid-2">
                     <div class="form-group">
                         <label>Sıcak Servis Bitiş Saati</label>
-                        <input type="text" data-field="hot_service" placeholder="01:30">
-                        <span class="hint">Sıcak mutfağın kapandığı saat (genelde kapanıştan yarım saat önce). "Sıcak servis: 01:30" şeklinde gösterilir. <strong>Boş bırakırsanız hiç gösterilmez.</strong></span>
+                        <input type="text" data-field="hot_service" placeholder="23:00">
                     </div>
                     <div class="form-group">
                         <label>Taze Et Rezervasyon Saati</label>
                         <input type="text" data-field="fresh_meat_time" placeholder="15:00">
-                        <span class="hint">Rezervasyon formunun altında "Saat 15:00 öncesinde verilen rezervasyonlarda etiniz taze olarak hazırlanır." notu çıkar. <strong>Boş bırakırsanız not gösterilmez.</strong></span>
                     </div>
                 </div>
             </div>
@@ -516,10 +533,6 @@
                 <div class="form-group">
                     <label>Google Business URL</label>
                     <input type="url" data-field="google_url">
-                </div>
-                <div class="form-group">
-                    <label>Facebook URL <span class="hint" style="display:inline;">(opsiyonel — şu an gösterilmiyor)</span></label>
-                    <input type="url" data-field="facebook">
                 </div>
             </div>
             <div class="save-bar">
@@ -541,36 +554,14 @@
                 <div class="form-group">
                     <label>İçerik</label>
                     <textarea data-field="content" rows="8"></textarea>
-                    <span class="hint">Paragraf için Enter Enter (boş bir satır) bırakın. **kalın** ve *italik* desteklenir.</span>
                 </div>
             </div>
             <div class="card">
-                <div class="card-h"><i class="fa-solid fa-star"></i> Neden Garatava? (6 madde)</div>
-                <div class="form-group">
-                    <label>1. Madde</label>
-                    <input type="text" data-field="reason1">
-                    <span class="hint">Boş bıraktığınız maddeler sitede hiç görünmez — istediğiniz kadar madde kullanabilirsiniz.</span>
-                </div>
-                <div class="form-group">
-                    <label>2. Madde</label>
-                    <input type="text" data-field="reason2">
-                </div>
-                <div class="form-group">
-                    <label>3. Madde</label>
-                    <input type="text" data-field="reason3">
-                </div>
-                <div class="form-group">
-                    <label>4. Madde</label>
-                    <input type="text" data-field="reason4">
-                </div>
-                <div class="form-group">
-                    <label>5. Madde</label>
-                    <input type="text" data-field="reason5">
-                </div>
-                <div class="form-group">
-                    <label>6. Madde</label>
-                    <input type="text" data-field="reason6">
-                </div>
+                <div class="card-h"><i class="fa-solid fa-star"></i> Neden Garatava?</div>
+                <div id="reasonsList"></div>
+                <button class="btn btn-ghost btn-block" id="addReasonBtn" style="margin-top: 0.8rem;">
+                    <i class="fa-solid fa-plus"></i> Madde Ekle
+                </button>
             </div>
             <div class="save-bar">
                 <button class="btn btn-ghost" data-action="reload" data-target="about"><i class="fa-solid fa-rotate"></i> Yenile</button>
@@ -589,7 +580,6 @@
                         <i class="fa-solid fa-cloud-arrow-up"></i> Fotoğraf Yükle
                         <input type="file" id="galleryUpload" accept="image/*">
                     </label>
-                    <span class="hint" style="margin:0;">veya manuel olarak görsel URL'i girin</span>
                 </div>
                 <div id="galleryList"></div>
                 <button class="btn btn-ghost btn-block" id="addGalleryBtn" style="margin-top: 0.8rem;">
@@ -740,6 +730,47 @@
             return target;
         }
 
+        // === "Neden Garatava?" madde listesi ===
+        // Veri formatı: about.reasons dizisi. Eski dosyalarda reason1..reason6 varsa
+        // ilk yüklemede otomatik olarak diziye taşınır.
+        function normalizeReasons() {
+            const about = state.data.about;
+            if (!about) return [];
+            if (!Array.isArray(about.reasons)) {
+                about.reasons = ['reason1','reason2','reason3','reason4','reason5','reason6']
+                    .map(k => (about[k] || '').trim())
+                    .filter(Boolean);
+            }
+            ['reason1','reason2','reason3','reason4','reason5','reason6'].forEach(k => delete about[k]);
+            return about.reasons;
+        }
+
+        function renderReasons() {
+            const list = $('#reasonsList');
+            const items = normalizeReasons();
+            list.innerHTML = '';
+            if (items.length === 0) {
+                list.innerHTML = '<div class="empty-state">Henüz madde yok. Aşağıdaki "Madde Ekle" ile başlayın.</div>';
+                return;
+            }
+            items.forEach((text, idx) => {
+                const row = document.createElement('div');
+                row.className = 'reason-item';
+                row.innerHTML = `
+                    <input type="text" placeholder="Örn: Ev yapımı mezeler" data-rfield data-idx="${idx}" value="${escapeAttr(text)}">
+                    <button class="icon-btn del" type="button" title="Sil" data-ract="del" data-idx="${idx}"><i class="fa-solid fa-trash"></i></button>
+                `;
+                list.appendChild(row);
+            });
+        }
+
+        function collectReasons() {
+            if (!state.data.about) return;
+            const items = [];
+            $$('#reasonsList [data-rfield]').forEach(el => items.push(el.value.trim()));
+            state.data.about.reasons = items.filter(Boolean);
+        }
+
         // === Gallery UI ===
         function renderGallery() {
             const list = $('#galleryList');
@@ -795,8 +826,12 @@
             try {
                 showLoading(true);
                 const data = await loadFile(key);
-                if (key === 'gallery') renderGallery();
-                else fillForm(`#panel-${key}`, data);
+                if (key === 'gallery') {
+                    renderGallery();
+                } else {
+                    fillForm(`#panel-${key}`, data);
+                    if (key === 'about') renderReasons();
+                }
             } catch (e) {
                 toast('Yüklenemedi: ' + e.message, 'err');
             } finally {
@@ -807,8 +842,12 @@
         async function saveTab(key) {
             try {
                 showLoading(true);
-                if (key === 'gallery') collectGallery();
-                else readForm(`#panel-${key}`, state.data[key]);
+                if (key === 'gallery') {
+                    collectGallery();
+                } else {
+                    readForm(`#panel-${key}`, state.data[key]);
+                    if (key === 'about') collectReasons();
+                }
                 await saveFile(key);
                 toast('Kaydedildi · GitHub Pages 1-2 dk içinde günceller', 'ok');
             } catch (e) {
@@ -872,6 +911,28 @@
                 const { action, target } = btn.dataset;
                 if (action === 'save') saveTab(target);
                 if (action === 'reload') loadInto(target);
+            });
+
+            // "Neden Garatava?" madde ekle / sil
+            $('#addReasonBtn').addEventListener('click', () => {
+                if (!state.data.about) state.data.about = {};
+                collectReasons();
+                state.data.about.reasons = (state.data.about.reasons || []).concat('');
+                renderReasons();
+                const inputs = $$('#reasonsList [data-rfield]');
+                if (inputs.length) inputs[inputs.length - 1].focus();
+            });
+
+            $('#reasonsList').addEventListener('click', (e) => {
+                const btn = e.target.closest('[data-ract="del"]');
+                if (!btn) return;
+                const idx = +btn.dataset.idx;
+                // collectReasons boşları eler, bu yüzden silmeden önce ham değerleri alıyoruz
+                const items = [];
+                $$('#reasonsList [data-rfield]').forEach(el => items.push(el.value.trim()));
+                items.splice(idx, 1);
+                state.data.about.reasons = items;
+                renderReasons();
             });
 
             // Gallery actions

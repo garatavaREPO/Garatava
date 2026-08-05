@@ -337,9 +337,6 @@
             font-size: 1rem;
         }
         .why-list li:last-child { border-bottom: none; }
-        .why-list li[hidden] { display: none; }
-        /* Görünen son maddede alt çizgi olmasın (gizli maddeler atlanır) */
-        .why-list li:not(:has(~ li:not([hidden]))) { border-bottom: none; }
         .why-list i { color: var(--amber); font-size: 1.1rem; }
 
         /* === Menu === */
@@ -399,6 +396,99 @@
             color: var(--ink-soft);
             font-size: 1.1rem;
         }
+
+        /* === Menü teaser + özellik kutuları === */
+        .menu-teaser { background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%); }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        .feature-card {
+            background: var(--white);
+            border-top: 3px solid var(--amber);
+            padding: 2.2rem 1.6rem;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(14,79,92,0.07);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .feature-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(14,79,92,0.12); }
+        .feature-card i { display: block; font-size: 1.8rem; color: var(--amber); margin-bottom: 1rem; }
+        .feature-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.35rem;
+            color: var(--teal-deep);
+            letter-spacing: 1px;
+            margin-bottom: 0.6rem;
+        }
+        .feature-card p { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.65; }
+
+        /* === Etkinlikler === */
+        .events { background: var(--white); }
+        .events-intro {
+            text-align: center;
+            max-width: 660px;
+            margin: 0 auto 3rem;
+            color: var(--ink-soft);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.4rem;
+            margin-bottom: 3rem;
+        }
+        .event-card {
+            background: var(--cream);
+            border-left: 3px solid var(--amber);
+            padding: 1.9rem 1.6rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .event-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(14,79,92,0.12); }
+        .event-card i { display: block; font-size: 1.5rem; color: var(--amber); margin-bottom: 0.9rem; }
+        .event-card h4 { font-size: 1.2rem; color: var(--teal-deep); margin-bottom: 0.45rem; letter-spacing: 0.5px; }
+        .event-card p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.02rem;
+            color: var(--ink-soft);
+            line-height: 1.55;
+        }
+        .event-cta {
+            background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .event-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -30%;
+            width: 160%; height: 200%;
+            background: radial-gradient(circle, rgba(217,122,60,0.18), transparent 60%);
+        }
+        .event-cta h3 {
+            position: relative;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1.7rem;
+            color: var(--amber);
+            margin-bottom: 1rem;
+        }
+        .event-cta p {
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+        .cta-buttons { position: relative; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
         /* === Atmosphere / Gallery === */
         .atmosphere { background: var(--white); }
@@ -793,14 +883,14 @@
     <div class="topbar">
         <div class="topbar-inner">
             <div class="topbar-info">
-                <a href="tel:+905539287494" id="topbar-phone"><i class="fa-solid fa-phone"></i> +90 553 928 74 94</a>
+                <a href="tel:+905469049289" id="topbar-phone"><i class="fa-solid fa-phone"></i> +90 546 904 92 89</a>
                 <a href="mailto:info@garatava.com" id="topbar-email"><i class="fa-solid fa-envelope"></i> info@garatava.com</a>
                 <span id="topbar-hours"><i class="fa-regular fa-clock"></i> Her gün 09:00 - 02:00</span>
-                <span id="topbar-hotservice" hidden><i class="fa-solid fa-fire-burner"></i> <span><span data-i18n="info.hotService">Sıcak servis</span>: <span id="topbar-hotservice-value"></span></span></span>
+                <span id="topbar-hotservice" hidden><i class="fa-solid fa-fire-burner"></i> <span><span data-i18n="info.hotServicePre">Sıcak servisimiz</span> <span id="topbar-hotservice-value"></span><span data-i18n="info.hotServicePost">'da kapanmaktadır.</span></span></span>
             </div>
             <div class="topbar-social">
                 <a href="https://www.instagram.com/garatavabodrum?igsh=MWdiZnQwanVkOGNxZw==" target="_blank" id="topbar-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/905539287494" target="_blank" id="topbar-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/905469049289" target="_blank" id="topbar-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -817,6 +907,7 @@
             <nav id="mainNav">
                 <a href="#about" data-i18n="nav.about">Hikayemiz</a>
                 <a href="/menu" data-i18n="nav.menu">Menü</a>
+                <a href="#events" data-i18n="nav.events">Etkinlikler</a>
                 <a href="#reservation" data-i18n="nav.reservation">Rezervasyon</a>
                 <a href="#contact" data-i18n="nav.contact">İletişim</a>
             </nav>
@@ -825,17 +916,18 @@
                     <span class="lang-flag" id="langFlag">🇹🇷</span><span id="langCode">TR</span>
                 </button>
                 <a href="https://www.instagram.com/garatavabodrum?igsh=MWdiZnQwanVkOGNxZw==" target="_blank" class="icon-btn icon-instagram" id="header-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/905539287494" target="_blank" class="icon-btn icon-whatsapp" id="header-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="tel:+905539287494" class="icon-btn" id="header-phone" aria-label="Telefon"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/905469049289" target="_blank" class="icon-btn icon-whatsapp" id="header-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+905469049289" class="icon-btn" id="header-phone" aria-label="Telefon"><i class="fa-solid fa-phone"></i></a>
                 <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menüyü aç"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
         <!-- Mobile drawer -->
         <div class="mobile-drawer" id="mobileDrawer">
-            <a href="#about">Hikayemiz</a>
-            <a href="/menu">Menü</a>
-            <a href="#reservation">Rezervasyon</a>
-            <a href="#contact">İletişim</a>
+            <a href="#about" data-i18n="nav.about">Hikayemiz</a>
+            <a href="/menu" data-i18n="nav.menu">Menü</a>
+            <a href="#events" data-i18n="nav.events">Etkinlikler</a>
+            <a href="#reservation" data-i18n="nav.reservation">Rezervasyon</a>
+            <a href="#contact" data-i18n="nav.contact">İletişim</a>
         </div>
     </header>
 
@@ -867,13 +959,12 @@
                 </div>
                 <div class="why-card">
                     <h3 data-i18n="about.whyTitle">Neden Garatava?</h3>
-                    <ul class="why-list">
-                        <li><i class="fa-solid fa-utensils"></i><span id="reason1">Bodrum'un yerel lezzetleri</span></li>
-                        <li><i class="fa-solid fa-bowl-food"></i><span id="reason2">Ev yapımı mezeler</span></li>
-                        <li><i class="fa-solid fa-tree"></i><span id="reason3">Doğa ile iç içe ortam</span></li>
-                        <li><i class="fa-solid fa-drumstick-bite"></i><span id="reason4">Taze günlük etler</span></li>
-                        <li><i class="fa-solid fa-heart"></i><span id="reason5">Aile sıcaklığında ortam</span></li>
-                        <li hidden><i class="fa-solid fa-star"></i><span id="reason6"></span></li>
+                    <ul class="why-list" id="whyList">
+                        <li><i class="fa-solid fa-utensils"></i><span>Bodrum'un yerel lezzetleri</span></li>
+                        <li><i class="fa-solid fa-bowl-food"></i><span>Ev yapımı mezeler</span></li>
+                        <li><i class="fa-solid fa-tree"></i><span>Doğa ile iç içe ortam</span></li>
+                        <li><i class="fa-solid fa-drumstick-bite"></i><span>Taze günlük etler</span></li>
+                        <li><i class="fa-solid fa-heart"></i><span>Aile sıcaklığında ortam</span></li>
                     </ul>
                 </div>
             </div>
@@ -883,14 +974,33 @@
     <!-- Menu teaser → tam menü ayrı sayfada -->
     <section class="menu-teaser reveal" id="menu">
         <div class="container">
-            <div class="section-eyebrow">Mutfağımız</div>
-            <h2 class="section-title">Menümüz</h2>
+            <div class="section-eyebrow" data-i18n="menu.eyebrow">Mutfağımız</div>
+            <h2 class="section-title" data-i18n="menu.title">Menümüz</h2>
             <div class="section-divider"><i class="fa-solid fa-utensils"></i></div>
-            <p style="text-align:center;max-width:640px;margin:0 auto 2rem;color:var(--ink-soft);font-size:1.05rem;">
-                Bodrum'un yerel lezzetlerinden taze deniz ürünlerine, ev yapımı mezelerden mevsim salatalarına — tüm menümüzü keşfedin.
+            <p style="text-align:center;max-width:640px;margin:0 auto;color:var(--ink-soft);font-size:1.05rem;" data-i18n="menu.teaser">
+                Ateşten gelen taze etlerden ev yapımı mezelere, mevsim salatalarından soğuk rakı sofralarına — tüm menümüzü keşfedin.
             </p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-fire"></i>
+                    <h4 data-i18n="feature.1t">Ocaktan Sofraya</h4>
+                    <p data-i18n="feature.1d">Günlük alınan taze etler, ustasının elinden ateşte pişer; sofranıza sıcacık gelir.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <h4 data-i18n="feature.2t">Ev Yapımı Mezeler</h4>
+                    <p data-i18n="feature.2d">Mevsiminde, kendi mutfağımızda hazırlanan Ege mezeleri — her gün taze.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-fire-burner"></i>
+                    <h4 data-i18n="feature.3t">Kendin Getir, Biz Pişirelim</h4>
+                    <p data-i18n="feature.3d">Etinizi ve bandrollü içkinizi getirin, gerisini bize bırakın. Kişi başı fiyat uygulanır; 10 yaş altı çocuklarımız misafirimizdir.</p>
+                </div>
+            </div>
+
             <div style="text-align:center;">
-                <a href="/menu" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> <span>Tam Menüyü Gör</span></a>
+                <a href="/menu" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> <span data-i18n="menu.btnFull">Tam Menüyü Gör</span></a>
             </div>
         </div>
     </section>
@@ -903,6 +1013,59 @@
             <div class="section-divider"><i class="fa-solid fa-wine-glass"></i></div>
 
             <div class="photo-grid" id="galleryContainer"></div>
+        </div>
+    </section>
+
+    <!-- Events / Özel Günler -->
+    <section class="events reveal" id="events">
+        <div class="container">
+            <div class="section-eyebrow" data-i18n="events.eyebrow">Özel Günler</div>
+            <h2 class="section-title" data-i18n="events.title">Kutlamalarınız Garatava'da</h2>
+            <div class="section-divider"><i class="fa-solid fa-champagne-glasses"></i></div>
+
+            <p class="events-intro" data-i18n="events.intro">
+                Nişan, düğün, doğum günü ve özel davetleriniz için bahçemiz ve kapalı alanımız sizin.
+                Kalabalık sofraları ağırlamayı, güzel günlerinize ortak olmayı seviyoruz.
+            </p>
+
+            <div class="event-grid">
+                <div class="event-card">
+                    <i class="fa-solid fa-ring"></i>
+                    <h4 data-i18n="events.c1t">Nişan & Söz</h4>
+                    <p data-i18n="events.c1d">İki ailenin buluştuğu o özel akşam için sakin, sıcak ve size özel bir düzen.</p>
+                </div>
+                <div class="event-card">
+                    <i class="fa-solid fa-heart"></i>
+                    <h4 data-i18n="events.c2t">Düğün & Kına</h4>
+                    <p data-i18n="events.c2d">Kına geceniz ya da düğün sonrası davetiniz için bahçemiz ve kapalı alanımız hazır.</p>
+                </div>
+                <div class="event-card">
+                    <i class="fa-solid fa-cake-candles"></i>
+                    <h4 data-i18n="events.c3t">Doğum Günü</h4>
+                    <p data-i18n="events.c3d">Pasta, süsleme ve masa düzenini birlikte planlayalım; sürprizi siz düşünün, gerisi bizde.</p>
+                </div>
+                <div class="event-card">
+                    <i class="fa-solid fa-users"></i>
+                    <h4 data-i18n="events.c4t">Özel Davetler & Kurumsal</h4>
+                    <p data-i18n="events.c4d">Kalabalık gruplar, iş yemekleri ve yıl sonu davetleriniz için ayrı bir düzen kurulur.</p>
+                </div>
+            </div>
+
+            <div class="event-cta">
+                <h3 data-i18n="events.ctaTitle">Etkinliğinizi Birlikte Planlayalım</h3>
+                <p data-i18n="events.ctaText">
+                    Her etkinlik kendine özeldir; menü, kişi sayısı ve düzenleme sizin isteklerinize göre belirlenir.
+                    Uygunluk, koşullar ve fiyatlandırma için lütfen bizimle iletişime geçin.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/905469049289" target="_blank" class="btn btn-primary" id="events-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> <span data-i18n="events.btnWa">WhatsApp'tan Yazın</span>
+                    </a>
+                    <a href="tel:+905469049289" class="btn btn-outline" id="events-phone">
+                        <i class="fa-solid fa-phone"></i> <span data-i18n="events.btnCall">Bizi Arayın</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -994,12 +1157,12 @@
                         <div>
                             <strong data-i18n="contact.hours">Çalışma Saatleri</strong>
                             <span id="contact-hours">Her gün 09:00 - 02:00</span>
-                            <span class="contact-sub" id="contact-hotservice" hidden><span data-i18n="info.hotService">Sıcak servis</span>: <span id="contact-hotservice-value"></span></span>
+                            <span class="contact-sub" id="contact-hotservice" hidden><span data-i18n="info.hotServicePre">Sıcak servisimiz</span> <span id="contact-hotservice-value"></span><span data-i18n="info.hotServicePost">'da kapanmaktadır.</span></span>
                         </div>
                     </div>
                     <div class="contact-card">
                         <i class="fa-solid fa-phone"></i>
-                        <div><strong data-i18n="contact.phone">Telefon</strong><a href="tel:+905539287494" id="contact-phone">+90 553 928 74 94</a></div>
+                        <div><strong data-i18n="contact.phone">Telefon</strong><a href="tel:+905469049289" id="contact-phone">+90 546 904 92 89</a></div>
                     </div>
                     <div class="contact-card">
                         <i class="fa-solid fa-envelope"></i>
@@ -1007,7 +1170,7 @@
                     </div>
                     <div class="contact-card">
                         <i class="fa-brands fa-whatsapp"></i>
-                        <div><strong>WhatsApp</strong><a href="https://wa.me/905539287494" target="_blank" id="contact-whatsapp" data-i18n="contact.waBtn">Hemen Mesaj Gönder</a></div>
+                        <div><strong>WhatsApp</strong><a href="https://wa.me/905469049289" target="_blank" id="contact-whatsapp" data-i18n="contact.waBtn">Hemen Mesaj Gönder</a></div>
                     </div>
                     <a class="contact-card contact-card-link" href="https://www.instagram.com/garatavabodrum?igsh=MWdiZnQwanVkOGNxZw==" target="_blank" id="contact-instagram-card">
                         <i class="fa-brands fa-instagram"></i>
@@ -1032,9 +1195,9 @@
             <img src="/images/logo.png" alt="Garatava" class="footer-logo" onerror="this.style.display='none'">
             <div class="footer-sub">Bodrum</div>
             <div class="footer-social">
-                <a href="https://www.instagram.com/garatavabodrum?igsh=MWdiZnQwanVkOGNxZw==" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://wa.me/905539287494" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="tel:+905539287494" aria-label="Telefon"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://www.instagram.com/garatavabodrum?igsh=MWdiZnQwanVkOGNxZw==" target="_blank" id="footer-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/905469049289" target="_blank" id="footer-whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+905469049289" id="footer-phone" aria-label="Telefon"><i class="fa-solid fa-phone"></i></a>
             </div>
             <div class="footer-bottom">
                 &copy; <span id="year"></span> Garatava — Bodrum. <span data-i18n="footer.rights">Tüm hakları saklıdır.</span>
@@ -1064,6 +1227,7 @@
         const i18n = {
             tr: {
                 'nav.about': 'Hikayemiz', 'nav.menu': 'Menü', 'nav.atmosphere': 'Atmosfer', 'nav.contact': 'İletişim',
+                'nav.events': 'Etkinlikler', 'nav.reservation': 'Rezervasyon',
                 'hero.eyebrow': 'Bodrum • Restaurant',
                 'hero.title': "Bodrum'un <span>Sıcak</span><br>Sofrasına Hoş Geldin",
                 'hero.tagline': 'Günlük taze etler, ev yapımı mezeler ve akşamın serinliğinde dostça paylaşılan sofralar — <br>Bodrum\'un kalbinde, ailenden biriymişsin gibi ağırlıyoruz.',
@@ -1074,12 +1238,34 @@
                 'about.whyTitle': 'Neden Garatava?',
                 'menu.eyebrow': 'Mutfağımız', 'menu.title': 'Menümüz',
                 'menu.note': 'Günün taze tarifleri ve şefin sürprizleri için sofraya buyurun — sizi misafirimiz olarak ağırlamayı çok seviyoruz.',
+                'menu.teaser': 'Ateşten gelen taze etlerden ev yapımı mezelere, mevsim salatalarından soğuk rakı sofralarına — tüm menümüzü keşfedin.',
+                'menu.btnFull': 'Tam Menüyü Gör',
+                'feature.1t': 'Ocaktan Sofraya',
+                'feature.1d': 'Günlük alınan taze etler, ustasının elinden ateşte pişer; sofranıza sıcacık gelir.',
+                'feature.2t': 'Ev Yapımı Mezeler',
+                'feature.2d': 'Mevsiminde, kendi mutfağımızda hazırlanan Ege mezeleri — her gün taze.',
+                'feature.3t': 'Kendin Getir, Biz Pişirelim',
+                'feature.3d': 'Etinizi ve bandrollü içkinizi getirin, gerisini bize bırakın. Kişi başı fiyat uygulanır; 10 yaş altı çocuklarımız misafirimizdir.',
                 'atmosphere.eyebrow': 'Atmosfer', 'atmosphere.title': 'Bir Akşamın Hikayesi',
+                'events.eyebrow': 'Özel Günler', 'events.title': "Kutlamalarınız Garatava'da",
+                'events.intro': 'Nişan, düğün, doğum günü ve özel davetleriniz için bahçemiz ve kapalı alanımız sizin. Kalabalık sofraları ağırlamayı, güzel günlerinize ortak olmayı seviyoruz.',
+                'events.c1t': 'Nişan & Söz',
+                'events.c1d': 'İki ailenin buluştuğu o özel akşam için sakin, sıcak ve size özel bir düzen.',
+                'events.c2t': 'Düğün & Kına',
+                'events.c2d': 'Kına geceniz ya da düğün sonrası davetiniz için bahçemiz ve kapalı alanımız hazır.',
+                'events.c3t': 'Doğum Günü',
+                'events.c3d': 'Pasta, süsleme ve masa düzenini birlikte planlayalım; sürprizi siz düşünün, gerisi bizde.',
+                'events.c4t': 'Özel Davetler & Kurumsal',
+                'events.c4d': 'Kalabalık gruplar, iş yemekleri ve yıl sonu davetleriniz için ayrı bir düzen kurulur.',
+                'events.ctaTitle': 'Etkinliğinizi Birlikte Planlayalım',
+                'events.ctaText': 'Her etkinlik kendine özeldir; menü, kişi sayısı ve düzenleme sizin isteklerinize göre belirlenir. Uygunluk, koşullar ve fiyatlandırma için lütfen bizimle iletişime geçin.',
+                'events.btnWa': "WhatsApp'tan Yazın", 'events.btnCall': 'Bizi Arayın',
                 'reservation.eyebrow': 'Bize Katılın', 'reservation.title': 'Rezervasyon',
                 'reservation.success': 'Rezervasyon isteğiniz alındı. En kısa zamanda sizinle iletişime geçeceğiz.',
                 'reservation.freshPre': 'Saat',
                 'reservation.freshPost': ' öncesinde verilen rezervasyonlarda etiniz taze olarak hazırlanır.',
-                'info.hotService': 'Sıcak servis',
+                'info.hotServicePre': 'Sıcak servisimiz',
+                'info.hotServicePost': "'da kapanmaktadır.",
                 'form.name': 'Adınız *', 'form.phone': 'Telefon *', 'form.date': 'Tarih *', 'form.time': 'Saat *',
                 'form.guests': 'Kişi Sayısı *', 'form.email': 'E-posta', 'form.notes': 'Özel İstekler / Notlar',
                 'form.notesPlaceholder': 'Doğum günü, alerjiler, özel tercihler...',
@@ -1097,6 +1283,7 @@
             },
             en: {
                 'nav.about': 'Our Story', 'nav.menu': 'Menu', 'nav.atmosphere': 'Atmosphere', 'nav.contact': 'Contact',
+                'nav.events': 'Events', 'nav.reservation': 'Reservation',
                 'hero.eyebrow': 'Bodrum • Restaurant',
                 'hero.title': "Welcome to Bodrum's <span>Warm</span><br>Table",
                 'hero.tagline': 'Fresh daily cuts, homemade mezes and friendly tables shared in the cool of the evening — <br>at the heart of Bodrum, we host you like family.',
@@ -1107,12 +1294,34 @@
                 'about.whyTitle': 'Why Garatava?',
                 'menu.eyebrow': 'Our Kitchen', 'menu.title': 'Our Menu',
                 'menu.note': "For our day's fresh recipes and the chef's surprises, come join us at our table — we'd love to host you.",
+                'menu.teaser': 'From fresh cuts off the grill to homemade mezes, seasonal salads and long rakı tables — explore our full menu.',
+                'menu.btnFull': 'See the Full Menu',
+                'feature.1t': 'From the Grill to Your Table',
+                'feature.1d': 'Meat sourced fresh every day, cooked over open fire by our master and served hot.',
+                'feature.2t': 'Homemade Mezes',
+                'feature.2d': 'Seasonal Aegean mezes prepared in our own kitchen — fresh every day.',
+                'feature.3t': 'Bring Your Own, We Cook It',
+                'feature.3d': 'Bring your own meat and licensed drinks, leave the rest to us. Priced per person; children under 10 are our guests.',
                 'atmosphere.eyebrow': 'Atmosphere', 'atmosphere.title': 'The Story of an Evening',
+                'events.eyebrow': 'Special Occasions', 'events.title': 'Celebrate With Us',
+                'events.intro': 'Our garden and indoor area are yours for engagements, weddings, birthdays and private gatherings. We love hosting large tables and being part of your happiest days.',
+                'events.c1t': 'Engagement',
+                'events.c1d': 'A calm, warm and personally arranged setting for the evening two families come together.',
+                'events.c2t': 'Wedding & Henna Night',
+                'events.c2d': 'Our garden and indoor area are ready for your henna night or post-wedding reception.',
+                'events.c3t': 'Birthdays',
+                'events.c3d': "Let's plan the cake, decoration and table layout together — you handle the surprise, we'll do the rest.",
+                'events.c4t': 'Private & Corporate',
+                'events.c4d': 'A separate arrangement for large groups, business dinners and year-end gatherings.',
+                'events.ctaTitle': "Let's Plan Your Event Together",
+                'events.ctaText': 'Every event is unique; the menu, guest count and arrangement are shaped around your wishes. Please get in touch for availability, terms and pricing.',
+                'events.btnWa': 'Message Us on WhatsApp', 'events.btnCall': 'Call Us',
                 'reservation.eyebrow': 'Join Us', 'reservation.title': 'Reservation',
                 'reservation.success': 'Your reservation request has been received. We will contact you shortly.',
                 'reservation.freshPre': 'Reservations made before',
                 'reservation.freshPost': ' are prepared with freshly cut meat.',
-                'info.hotService': 'Hot service',
+                'info.hotServicePre': 'Hot food is served until',
+                'info.hotServicePost': '.',
                 'form.name': 'Your Name *', 'form.phone': 'Phone *', 'form.date': 'Date *', 'form.time': 'Time *',
                 'form.guests': 'Guests *', 'form.email': 'Email', 'form.notes': 'Special Requests / Notes',
                 'form.notesPlaceholder': 'Birthday, allergies, special preferences...',
@@ -1182,7 +1391,7 @@
             } catch (err) { /* yine de WhatsApp'a yönlendir */ }
 
             // 2) Open WhatsApp with prefilled message (restoran numarasına)
-            const restaurantWa = (window.__restaurantWhatsapp || '+905539287494').replace(/[^0-9]/g, '');
+            const restaurantWa = (window.__restaurantWhatsapp || '+905469049289').replace(/[^0-9]/g, '');
             const msg = `Merhaba, rezervasyon yapmak istiyorum.%0A%0A` +
                 `👤 İsim: ${data.get('name') || ''}%0A` +
                 `📞 Telefon: ${data.get('phone') || ''}%0A` +
@@ -1206,6 +1415,28 @@
                 if (t) { e.preventDefault(); t.scrollIntoView({behavior: 'smooth'}); }
             });
         });
+
+        // "Neden Garatava?" maddeleri admin panelinden serbestçe yazıldığı için
+        // ikonu metnin içeriğinden seçiyoruz. Eşleşme yoksa yıldız kullanılır.
+        const REASON_ICONS = [
+            [/nişan|düğün|kına|doğum ?günü|kutlama|davet/i, 'fa-solid fa-champagne-glasses'],
+            [/meze|çerez/i,                                 'fa-solid fa-bowl-food'],
+            [/doğa|bahçe|yeşil|ağaç|açık hava/i,            'fa-solid fa-tree'],
+            [/manzara|deniz manzara/i,                      'fa-solid fa-mountain-sun'],
+            [/balık|deniz ürün/i,                           'fa-solid fa-fish'],
+            [/rakı|içki|şarap|bira|kadeh/i,                 'fa-solid fa-wine-glass'],
+            [/salata|sebze|mevsim|ot\b/i,                   'fa-solid fa-leaf'],
+            [/kahvalt|çay\b|kahve/i,                        'fa-solid fa-mug-saucer'],
+            [/müzik|canlı/i,                                'fa-solid fa-guitar'],
+            [/aile|samimi|dost|sıcak|misafir/i,             'fa-solid fa-heart'],
+            [/otopark|park\b|vale/i,                        'fa-solid fa-square-parking'],
+            [/mangal|ocak|ateş|ızgara|köfte|kavurma|\bet\w*/i, 'fa-solid fa-drumstick-bite'],
+            [/lezzet|mutfak|sofra|yemek|tarif/i,            'fa-solid fa-utensils'],
+        ];
+        function reasonIcon(text) {
+            const hit = REASON_ICONS.find(([re]) => re.test(text));
+            return hit ? hit[1] : 'fa-solid fa-star';
+        }
 
         const emojiMap = {
             'Mezeler': 'fa-solid fa-bowl-food',
@@ -1232,10 +1463,12 @@
             const setHref = (id, href) => { const el = document.getElementById(id); if (el && href) el.href = href; };
 
             if (restaurant.phone) {
+                const tel = `tel:${restaurant.phone.replace(/\s/g,'')}`;
                 document.getElementById('topbar-phone').innerHTML = `<i class="fa-solid fa-phone"></i> ${restaurant.phone}`;
-                document.getElementById('topbar-phone').href = `tel:${restaurant.phone.replace(/\s/g,'')}`;
+                document.getElementById('topbar-phone').href = tel;
                 document.getElementById('contact-phone').textContent = restaurant.phone;
-                document.getElementById('contact-phone').href = `tel:${restaurant.phone.replace(/\s/g,'')}`;
+                document.getElementById('contact-phone').href = tel;
+                ['header-phone', 'footer-phone', 'events-phone'].forEach(id => setHref(id, tel));
             }
             if (restaurant.email) {
                 document.getElementById('topbar-email').innerHTML = `<i class="fa-solid fa-envelope"></i> ${restaurant.email}`;
@@ -1264,23 +1497,34 @@
             if (freshTime) document.getElementById('freshMeatTime').textContent = freshTime;
 
             if (restaurant.address) document.getElementById('contact-address').textContent = restaurant.address;
-            if (restaurant.instagram) { setHref('topbar-instagram', restaurant.instagram); setHref('contact-instagram-card', restaurant.instagram); }
+            if (restaurant.instagram) {
+                ['topbar-instagram', 'contact-instagram-card', 'header-instagram', 'footer-instagram']
+                    .forEach(id => setHref(id, restaurant.instagram));
+            }
             if (restaurant.whatsapp) {
                 window.__restaurantWhatsapp = restaurant.whatsapp;
                 const wa = `https://wa.me/${restaurant.whatsapp.replace(/[^0-9]/g,'')}`;
-                setHref('topbar-whatsapp', wa);
-                document.getElementById('contact-whatsapp').href = wa;
+                ['topbar-whatsapp', 'contact-whatsapp', 'header-whatsapp', 'footer-whatsapp', 'events-whatsapp']
+                    .forEach(id => setHref(id, wa));
             }
 
-            // About reasons — boş bırakılan maddeler listeden düşer
-            const reasonKeys = ['reason1','reason2','reason3','reason4','reason5','reason6'];
-            if (reasonKeys.some(k => k in about)) {
-                reasonKeys.forEach(k => {
-                    const el = document.getElementById(k);
-                    if (!el) return;
-                    const val = (about[k] || '').trim();
-                    el.textContent = val;
-                    el.closest('li').hidden = !val;
+            // "Neden Garatava?" — admin panelinden istenildiği kadar madde eklenebilir.
+            // Yeni format: about.reasons dizisi. Eski format (reason1..reason6) da desteklenir.
+            const reasons = Array.isArray(about.reasons)
+                ? about.reasons
+                : ['reason1','reason2','reason3','reason4','reason5','reason6'].map(k => about[k]);
+            const cleanReasons = reasons.map(r => (r || '').trim()).filter(Boolean);
+            if (cleanReasons.length) {
+                const list = document.getElementById('whyList');
+                list.innerHTML = '';
+                cleanReasons.forEach(text => {
+                    const li = document.createElement('li');
+                    const icon = document.createElement('i');
+                    icon.className = reasonIcon(text);
+                    const span = document.createElement('span');
+                    span.textContent = text;
+                    li.append(icon, span);
+                    list.appendChild(li);
                 });
             }
 
