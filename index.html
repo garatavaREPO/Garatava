@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garatava — Bodrum Kahvaltı & Restaurant</title>
-    <meta name="description" content="Bodrum'un kalbinde sıcacık bir sofra: köy kahvaltısı, taze etler ve dostça paylaşılan akşamlar.">
+    <title>Garatava — Bodrum Restaurant</title>
+    <meta name="description" content="Bodrum'un kalbinde sıcacık bir sofra: taze etler, ev yapımı mezeler ve dostça paylaşılan akşamlar.">
     <meta property="og:title" content="Garatava — Bodrum">
-    <meta property="og:description" content="Köy kahvaltısı, taze etler ve dostça paylaşılan sofralar.">
+    <meta property="og:description" content="Taze etler, ev yapımı mezeler ve dostça paylaşılan sofralar.">
     <meta property="og:image" content="/images/logo.png">
 
     <link rel="icon" type="image/png" href="/images/logo.png">
@@ -71,7 +71,8 @@
             flex-wrap: wrap;
         }
         .topbar-info { display: flex; gap: 2rem; flex-wrap: wrap; }
-        .topbar-info a, .topbar-info span { display: inline-flex; align-items: center; gap: 0.5rem; opacity: 0.9; }
+        .topbar-info > a, .topbar-info > span { display: inline-flex; align-items: center; gap: 0.5rem; opacity: 0.9; }
+        .topbar-info > [hidden] { display: none; }
         .topbar-info i { color: var(--amber); font-size: 0.9rem; }
         .topbar-social { display: flex; gap: 1.2rem; align-items: center; }
         .topbar-social a {
@@ -336,6 +337,9 @@
             font-size: 1rem;
         }
         .why-list li:last-child { border-bottom: none; }
+        .why-list li[hidden] { display: none; }
+        /* Görünen son maddede alt çizgi olmasın (gizli maddeler atlanır) */
+        .why-list li:not(:has(~ li:not([hidden]))) { border-bottom: none; }
         .why-list i { color: var(--amber); font-size: 1.1rem; }
 
         /* === Menu === */
@@ -507,6 +511,18 @@
             text-align: center;
         }
         .success-message.show { display: block; }
+        .reservation-note {
+            position: relative;
+            max-width: 760px;
+            margin: 1.2rem auto 0;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--stone);
+            opacity: 0.85;
+        }
+        .reservation-note[hidden] { display: none; }
 
         /* === Contact === */
         .contact { background: var(--cream); }
@@ -530,6 +546,10 @@
         .contact-card i { font-size: 1.4rem; color: var(--amber); margin-top: 0.2rem; }
         .contact-card strong { display: block; font-family: 'Playfair Display', serif; color: var(--teal-deep); margin-bottom: 0.3rem; font-size: 1.05rem; }
         .contact-card a, .contact-card span { color: var(--ink-soft); font-size: 0.95rem; }
+        .contact-card #contact-hours, .contact-card .contact-sub { display: block; }
+        .contact-card .contact-sub { font-size: 0.85rem; color: var(--amber); margin-top: 0.15rem; }
+        .contact-card .contact-sub span { font-size: inherit; color: inherit; }
+        .contact-card [hidden] { display: none; }
         #map { min-height: 420px; box-shadow: 0 8px 30px rgba(14,79,92,0.1); }
         #map iframe { width: 100%; height: 100%; border: 0; }
 
@@ -775,7 +795,8 @@
             <div class="topbar-info">
                 <a href="tel:+905539287494" id="topbar-phone"><i class="fa-solid fa-phone"></i> +90 553 928 74 94</a>
                 <a href="mailto:info@garatava.com" id="topbar-email"><i class="fa-solid fa-envelope"></i> info@garatava.com</a>
-                <span id="topbar-hours"><i class="fa-regular fa-clock"></i> Her gün 18:00 - 02:00</span>
+                <span id="topbar-hours"><i class="fa-regular fa-clock"></i> Her gün 09:00 - 02:00</span>
+                <span id="topbar-hotservice" hidden><i class="fa-solid fa-fire-burner"></i> <span><span data-i18n="info.hotService">Sıcak servis</span>: <span id="topbar-hotservice-value"></span></span></span>
             </div>
             <div class="topbar-social">
                 <a href="https://www.instagram.com/garatavabodrum?igsh=MWdiZnQwanVkOGNxZw==" target="_blank" id="topbar-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -822,7 +843,7 @@
     <section class="hero" id="top">
         <div class="hero-content">
             <img src="/images/logo.png" alt="Garatava" class="hero-logo" onerror="this.style.display='none'">
-            <div class="hero-eyebrow" data-i18n="hero.eyebrow">Bodrum • Kahvaltı & Restaurant</div>
+            <div class="hero-eyebrow" data-i18n="hero.eyebrow">Bodrum • Restaurant</div>
             <h1 data-i18n-html="hero.title">Ege'nin <span>Ruhu</span><br>Tek Bir Sofrada</h1>
             <p class="hero-tagline" data-i18n-html="hero.tagline">Taze balık, ev yapımı mezeler ve unutulmaz akşamlar — <br>Bodrum'un kalbinde sizleri bekliyoruz.</p>
             <div class="hero-buttons">
@@ -842,17 +863,17 @@
 
             <div class="about-grid">
                 <div class="about-text" id="about-text">
-                    <p>Garatava, Bodrum'un sakin köşesinde, doğayla iç içe bir kahvaltı restoran deneyimi sunar. Hem kapalı hem açık bahçe alanlarımızda, güneş battıktan sonra sıcak ışıkların altında unutulmaz anlar yaşayabilirsiniz.</p>
+                    <p>Garatava, Bodrum'un sakin köşesinde, doğayla iç içe bir restoran deneyimi sunar. Hem kapalı hem açık bahçe alanlarımızda, güneş battıktan sonra sıcak ışıkların altında unutulmaz anlar yaşayabilirsiniz.</p>
                 </div>
                 <div class="why-card">
                     <h3 data-i18n="about.whyTitle">Neden Garatava?</h3>
                     <ul class="why-list">
-                        <li><i class="fa-solid fa-mug-saucer"></i><span id="reason1">Bodrum köy kahvaltısı</span></li>
+                        <li><i class="fa-solid fa-utensils"></i><span id="reason1">Bodrum'un yerel lezzetleri</span></li>
                         <li><i class="fa-solid fa-bowl-food"></i><span id="reason2">Ev yapımı mezeler</span></li>
                         <li><i class="fa-solid fa-tree"></i><span id="reason3">Doğa ile iç içe ortam</span></li>
-                        <li><i class="fa-solid fa-guitar"></i><span id="reason4">Canlı müzik geceleri</span></li>
-                        <li><i class="fa-solid fa-drumstick-bite"></i><span id="reason5">Taze günlük etler</span></li>
-                        <li><i class="fa-solid fa-heart"></i><span id="reason6">Aile sıcaklığında ortam</span></li>
+                        <li><i class="fa-solid fa-drumstick-bite"></i><span id="reason4">Taze günlük etler</span></li>
+                        <li><i class="fa-solid fa-heart"></i><span id="reason5">Aile sıcaklığında ortam</span></li>
+                        <li hidden><i class="fa-solid fa-star"></i><span id="reason6"></span></li>
                     </ul>
                 </div>
             </div>
@@ -948,6 +969,10 @@
                     <button type="submit" class="submit-btn" data-i18n="form.submit">Rezervasyon İsteği Gönder</button>
                 </form>
             </div>
+            <p class="reservation-note" id="freshMeatNote" hidden>
+                <span data-i18n="reservation.freshPre">Saat</span>
+                <span id="freshMeatTime"></span><span data-i18n="reservation.freshPost"> öncesinde verilen rezervasyonlarda etiniz taze olarak hazırlanır.</span>
+            </p>
         </div>
     </section>
 
@@ -963,6 +988,14 @@
                     <div class="contact-card">
                         <i class="fa-solid fa-location-dot"></i>
                         <div><strong data-i18n="contact.address">Adres</strong><span id="contact-address">Bodrum, Muğla</span></div>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fa-regular fa-clock"></i>
+                        <div>
+                            <strong data-i18n="contact.hours">Çalışma Saatleri</strong>
+                            <span id="contact-hours">Her gün 09:00 - 02:00</span>
+                            <span class="contact-sub" id="contact-hotservice" hidden><span data-i18n="info.hotService">Sıcak servis</span>: <span id="contact-hotservice-value"></span></span>
+                        </div>
                     </div>
                     <div class="contact-card">
                         <i class="fa-solid fa-phone"></i>
@@ -1031,9 +1064,9 @@
         const i18n = {
             tr: {
                 'nav.about': 'Hikayemiz', 'nav.menu': 'Menü', 'nav.atmosphere': 'Atmosfer', 'nav.contact': 'İletişim',
-                'hero.eyebrow': 'Bodrum • Kahvaltı & Restaurant',
+                'hero.eyebrow': 'Bodrum • Restaurant',
                 'hero.title': "Bodrum'un <span>Sıcak</span><br>Sofrasına Hoş Geldin",
-                'hero.tagline': 'Sabah güneşinde köy kahvaltısı, akşamın serinliğinde dostça paylaşılan sofralar — <br>Bodrum\'un kalbinde, ailenden biriymişsin gibi ağırlıyoruz.',
+                'hero.tagline': 'Günlük taze etler, ev yapımı mezeler ve akşamın serinliğinde dostça paylaşılan sofralar — <br>Bodrum\'un kalbinde, ailenden biriymişsin gibi ağırlıyoruz.',
                 'hero.btnReserve': 'Rezervasyon Yap', 'hero.btnMenu': 'Menüyü Keşfet', 'hero.scroll': 'Aşağı Kaydır',
                 'about.eyebrow': 'Hikayemiz', 'about.title': "Bodrum'un Kalbinden",
                 'about.p1': "Garatava, Bodrum'un sakin köşesinde, doğayla iç içe bir meyhane deneyimi sunar. Hem kapalı hem açık bahçe alanlarımızda, güneş battıktan sonra sıcak ışıkların altında unutulmaz anlar yaşayabilirsiniz.",
@@ -1044,6 +1077,9 @@
                 'atmosphere.eyebrow': 'Atmosfer', 'atmosphere.title': 'Bir Akşamın Hikayesi',
                 'reservation.eyebrow': 'Bize Katılın', 'reservation.title': 'Rezervasyon',
                 'reservation.success': 'Rezervasyon isteğiniz alındı. En kısa zamanda sizinle iletişime geçeceğiz.',
+                'reservation.freshPre': 'Saat',
+                'reservation.freshPost': ' öncesinde verilen rezervasyonlarda etiniz taze olarak hazırlanır.',
+                'info.hotService': 'Sıcak servis',
                 'form.name': 'Adınız *', 'form.phone': 'Telefon *', 'form.date': 'Tarih *', 'form.time': 'Saat *',
                 'form.guests': 'Kişi Sayısı *', 'form.email': 'E-posta', 'form.notes': 'Özel İstekler / Notlar',
                 'form.notesPlaceholder': 'Doğum günü, alerjiler, özel tercihler...',
@@ -1053,6 +1089,7 @@
                 'form.submit': 'Rezervasyon İsteği Gönder',
                 'contact.eyebrow': 'İletişim', 'contact.title': 'Bizi Bulun',
                 'contact.address': 'Adres', 'contact.phone': 'Telefon', 'contact.email': 'E-posta',
+                'contact.hours': 'Çalışma Saatleri',
                 'contact.waBtn': 'Hemen Mesaj Gönder',
                 'contact.igBtn': 'Bizi takip edin',
                 'map.directions': 'Yol Tarifi Al',
@@ -1060,9 +1097,9 @@
             },
             en: {
                 'nav.about': 'Our Story', 'nav.menu': 'Menu', 'nav.atmosphere': 'Atmosphere', 'nav.contact': 'Contact',
-                'hero.eyebrow': 'Bodrum • Breakfast & Restaurant',
+                'hero.eyebrow': 'Bodrum • Restaurant',
                 'hero.title': "Welcome to Bodrum's <span>Warm</span><br>Table",
-                'hero.tagline': 'Village breakfast in the morning sun, friendly tables shared in the cool of the evening — <br>at the heart of Bodrum, we host you like family.',
+                'hero.tagline': 'Fresh daily cuts, homemade mezes and friendly tables shared in the cool of the evening — <br>at the heart of Bodrum, we host you like family.',
                 'hero.btnReserve': 'Reserve a Table', 'hero.btnMenu': 'Explore Menu', 'hero.scroll': 'Scroll Down',
                 'about.eyebrow': 'Our Story', 'about.title': 'From the Heart of Bodrum',
                 'about.p1': "Garatava offers an authentic meyhane experience in a quiet corner of Bodrum, surrounded by nature. In our indoor and open garden areas, you can spend unforgettable moments under warm lights after sunset.",
@@ -1073,6 +1110,9 @@
                 'atmosphere.eyebrow': 'Atmosphere', 'atmosphere.title': 'The Story of an Evening',
                 'reservation.eyebrow': 'Join Us', 'reservation.title': 'Reservation',
                 'reservation.success': 'Your reservation request has been received. We will contact you shortly.',
+                'reservation.freshPre': 'Reservations made before',
+                'reservation.freshPost': ' are prepared with freshly cut meat.',
+                'info.hotService': 'Hot service',
                 'form.name': 'Your Name *', 'form.phone': 'Phone *', 'form.date': 'Date *', 'form.time': 'Time *',
                 'form.guests': 'Guests *', 'form.email': 'Email', 'form.notes': 'Special Requests / Notes',
                 'form.notesPlaceholder': 'Birthday, allergies, special preferences...',
@@ -1082,6 +1122,7 @@
                 'form.submit': 'Send Reservation Request',
                 'contact.eyebrow': 'Contact', 'contact.title': 'Find Us',
                 'contact.address': 'Address', 'contact.phone': 'Phone', 'contact.email': 'Email',
+                'contact.hours': 'Opening Hours',
                 'contact.waBtn': 'Send Message Now',
                 'contact.igBtn': 'Follow us',
                 'map.directions': 'Get Directions',
@@ -1176,7 +1217,9 @@
         };
 
         async function loadData() {
-            const safeFetch = (url, fallback) => fetch(url).then(r => r.ok ? r.json() : fallback).catch(() => fallback);
+            // cache-busting: admin panelden yapılan değişiklik tarayıcı cache'ine takılmasın
+            const safeFetch = (url, fallback) => fetch(`${url}?t=${Date.now()}`, { cache: 'no-store' })
+                .then(r => r.ok ? r.json() : fallback).catch(() => fallback);
 
             const [restaurant, about, galleryData] = await Promise.all([
                 safeFetch('/_data/restaurant.json', {}),
@@ -1200,7 +1243,26 @@
                 document.getElementById('contact-email').textContent = restaurant.email;
                 document.getElementById('contact-email').href = `mailto:${restaurant.email}`;
             }
-            if (restaurant.hours) document.getElementById('topbar-hours').innerHTML = `<i class="fa-regular fa-clock"></i> ${restaurant.hours}`;
+            if (restaurant.hours) {
+                document.getElementById('topbar-hours').innerHTML = `<i class="fa-regular fa-clock"></i> ${restaurant.hours}`;
+                document.getElementById('contact-hours').textContent = restaurant.hours;
+            }
+
+            // Sıcak servis saati — boşsa hiç gösterme
+            const hotService = (restaurant.hot_service || '').trim();
+            ['topbar-hotservice', 'contact-hotservice'].forEach(id => {
+                document.getElementById(id).hidden = !hotService;
+            });
+            if (hotService) {
+                document.getElementById('topbar-hotservice-value').textContent = hotService;
+                document.getElementById('contact-hotservice-value').textContent = hotService;
+            }
+
+            // Rezervasyon "taze et" notu — boşsa hiç gösterme
+            const freshTime = (restaurant.fresh_meat_time || '').trim();
+            document.getElementById('freshMeatNote').hidden = !freshTime;
+            if (freshTime) document.getElementById('freshMeatTime').textContent = freshTime;
+
             if (restaurant.address) document.getElementById('contact-address').textContent = restaurant.address;
             if (restaurant.instagram) { setHref('topbar-instagram', restaurant.instagram); setHref('contact-instagram-card', restaurant.instagram); }
             if (restaurant.whatsapp) {
@@ -1210,8 +1272,17 @@
                 document.getElementById('contact-whatsapp').href = wa;
             }
 
-            // About reasons
-            ['reason1','reason2','reason3','reason4','reason5','reason6'].forEach(k => { if (about[k]) document.getElementById(k).textContent = about[k]; });
+            // About reasons — boş bırakılan maddeler listeden düşer
+            const reasonKeys = ['reason1','reason2','reason3','reason4','reason5','reason6'];
+            if (reasonKeys.some(k => k in about)) {
+                reasonKeys.forEach(k => {
+                    const el = document.getElementById(k);
+                    if (!el) return;
+                    const val = (about[k] || '').trim();
+                    el.textContent = val;
+                    el.closest('li').hidden = !val;
+                });
+            }
 
             // About content (CMS markdown -> paragraphs)
             if (about.content) {
