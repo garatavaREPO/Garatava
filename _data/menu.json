@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T13:17:47.0164454Z",
+  "updatedAt": "2026-08-15T13:24:34.7381547Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -49,14 +49,6 @@
         {
           "name": "Tavuk Kavurma",
           "price": 450.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Karışık ızgara",
-          "price": 750.00,
           "description": "",
           "calories": null,
           "allergens": [],
