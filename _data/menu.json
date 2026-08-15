@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T13:27:56.0310746Z",
+  "updatedAt": "2026-08-15T13:30:24.2350293Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -147,60 +147,6 @@
         {
           "name": "Pet Su 500ml",
           "price": 50.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        }
-      ]
-    },
-    {
-      "name": "Rakılar",
-      "sortOrder": 8,
-      "products": [
-        {
-          "name": "Efe Gold Rakı 100cl",
-          "price": 3000.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Efe Gold 50cl",
-          "price": 2200.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Rakı ( Tek )",
-          "price": 250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Rakı (Duble)",
-          "price": 350.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Efe Gold 70cl",
-          "price": 2400.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Efe Gold 35cl",
-          "price": 1500.00,
           "description": "",
           "calories": null,
           "allergens": [],
