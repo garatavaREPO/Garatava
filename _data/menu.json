@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T13:07:43.7127873Z",
+  "updatedAt": "2026-08-15T13:16:09.9565748Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -70,7 +70,7 @@
       "products": [
         {
           "name": "Patates Tabağı",
-          "price": 250.00,
+          "price": 200.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -106,7 +106,7 @@
       "products": [
         {
           "name": "Pet Su 1.5L",
-          "price": 75.00,
+          "price": 100.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -193,6 +193,22 @@
         {
           "name": "Rakı (Duble)",
           "price": 350.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Efe Gold 70cl",
+          "price": 2400.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Efe Gold 35cl",
+          "price": 1500.00,
           "description": "",
           "calories": null,
           "allergens": [],
