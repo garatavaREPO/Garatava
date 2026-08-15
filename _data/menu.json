@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T20:33:13.7347693Z",
+  "updatedAt": "2026-08-15T13:05:44.4420113Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -40,7 +40,7 @@
         },
         {
           "name": "Dana Ciğer",
-          "price": 600.00,
+          "price": 550.00,
           "description": "",
           "calories": null,
           "allergens": [],
@@ -159,22 +159,6 @@
       "sortOrder": 8,
       "products": [
         {
-          "name": "Beylerbeyi Göbek Rakısı 20cl",
-          "price": 700.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Beylerbeyi Göbek Rakısı 70cl",
-          "price": 3250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
           "name": "Efe Gold Rakı 100cl",
           "price": 3000.00,
           "description": "",
@@ -205,14 +189,6 @@
           "calories": null,
           "allergens": [],
           "image": null
-        },
-        {
-          "name": "Beylerbeyi Göbek Rakısı 35cl",
-          "price": 1700.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
         }
       ]
     },
@@ -222,14 +198,6 @@
       "products": [
         {
           "name": "Efes Pilsen 50cl",
-          "price": 200.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Tuborg Gold 50cl",
           "price": 200.00,
           "description": "",
           "calories": null,
@@ -283,14 +251,6 @@
           "image": null
         },
         {
-          "name": "Girit Mezesi",
-          "price": 250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
           "name": "Kuru Cacık",
           "price": 250.00,
           "description": "",
@@ -317,39 +277,9 @@
       ]
     },
     {
-      "name": "Salatalar",
-      "sortOrder": 11,
-      "products": [
-        {
-          "name": "Çoban Salata",
-          "price": 300.00,
-          "description": "Mevsim ürünleriyle birlikte bodruma has Peynir ve Yeşil Zeytin",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Garatava Salata",
-          "price": 400.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        }
-      ]
-    },
-    {
       "name": "Ara Sıcaklar",
       "sortOrder": 13,
       "products": [
-        {
-          "name": "Paçanga Böreği",
-          "price": 300.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
         {
           "name": "Kaşarlı Mantar",
           "price": 300.00,
