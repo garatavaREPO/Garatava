@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T13:24:34.7381547Z",
+  "updatedAt": "2026-08-15T13:26:06.0808621Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -169,22 +169,6 @@
         {
           "name": "Efe Gold 50cl",
           "price": 2200.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Rakı Tek",
-          "price": 250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Rakı (Duble)",
-          "price": 350.00,
           "description": "",
           "calories": null,
           "allergens": [],
