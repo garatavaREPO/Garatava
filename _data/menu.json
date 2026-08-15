@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T13:34:53.6271034Z",
+  "updatedAt": "2026-08-15T13:43:30.2172675Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -185,6 +185,22 @@
         {
           "name": "Efe Gold 1000cl",
           "price": 3000.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Efe Gold ( Tek )",
+          "price": 250.00,
+          "description": "",
+          "calories": null,
+          "allergens": [],
+          "image": null
+        },
+        {
+          "name": "Efe Gold ( Duble )",
+          "price": 350.00,
           "description": "",
           "calories": null,
           "allergens": [],
