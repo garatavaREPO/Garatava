@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T13:25:04.3312545Z",
+  "updatedAt": "2026-09-04T15:51:53.9182890Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -213,7 +213,7 @@
       "sortOrder": 9,
       "products": [
         {
-          "name": "Efes Pilsen 50cl",
+          "name": "Tuborg 50cl",
           "price": 200.00,
           "description": "",
           "calories": null,
@@ -267,14 +267,6 @@
           "image": null
         },
         {
-          "name": "Kuru Cacık",
-          "price": 250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
           "name": "Patlıcan Salatası",
           "price": 250.00,
           "description": "Közlenmiş Patlıcan, kırmızı biber ve soğan ile harmanlanmış lezzet",
@@ -285,20 +277,6 @@
         {
           "name": "Peynir Tabağı",
           "price": 250.00,
-          "description": "",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        }
-      ]
-    },
-    {
-      "name": "Ara Sıcaklar",
-      "sortOrder": 13,
-      "products": [
-        {
-          "name": "Kaşarlı Mantar",
-          "price": 300.00,
           "description": "",
           "calories": null,
           "allergens": [],
