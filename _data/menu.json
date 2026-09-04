@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T15:51:53.9182890Z",
+  "updatedAt": "2026-09-04T15:52:13.2579420Z",
   "businessName": "GARATAVA",
   "categories": [
     {
@@ -246,14 +246,6 @@
           "name": "Pava",
           "price": 250.00,
           "description": "Gambille baklasından ege yöresinin vazgeçilmez lezzeti",
-          "calories": null,
-          "allergens": [],
-          "image": null
-        },
-        {
-          "name": "Yoğurtlu Semizotu",
-          "price": 250.00,
-          "description": "",
           "calories": null,
           "allergens": [],
           "image": null
